@@ -45,7 +45,7 @@ mention test type completely
 Text:
 {text}
 """
-    model = genai.GenerativeModel("gemini-2.0-pro")
+    model = genai.GenerativeModel("gemini-2.0-flash")
     try:
         response = model.generate_content(prompt)
         return response.text.strip()
