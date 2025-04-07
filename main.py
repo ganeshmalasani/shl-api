@@ -53,6 +53,10 @@ Text:
         return f"Error: {e}"
 
 # Search endpoint
+@app.get("/")
+def root():
+    return {"message": "SHL API is running!"}
+
 @app.get("/search")
 def search(query: str = Query(..., description="Natural language query"), top_k: int = 5):
     try:
