@@ -97,3 +97,10 @@ def search(query: str = Query(..., description="Natural language query"), top_k:
 
     except Exception as e:
         return {"error": str(e)}
+    
+import uvicorn
+import os
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # Render provides PORT
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
